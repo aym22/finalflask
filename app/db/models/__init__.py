@@ -8,12 +8,12 @@ from flask_login import UserMixin
 from sqlalchemy_serializer import SerializerMixin
 
 class Song(db.Model,SerializerMixin):
-    __tablename__ = 'songs'
+    __tablename__ = 'transaction'
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(300), nullable=True, unique=False)
     artist = db.Column(db.String(300), nullable=True, unique=False)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
-    user = relationship("User", back_populates="songs", uselist=False)
+    user = relationship("User", back_populates="transaction", uselist=False)
 
     def __init__(self, title, artist):
         self.title = title
