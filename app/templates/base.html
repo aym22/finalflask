@@ -11,7 +11,7 @@
             {{ bootstrap.load_css() }}
         {% endblock %}
 
-        <title>Transactions - {% block title %}{% endblock %}</title>
+        <title>My Site - {% block title %}{% endblock %}</title>
     {% endblock %}
 </head>
 <body>
@@ -35,8 +35,6 @@
                             {{ render_nav_item('auth.dashboard','Dashboard' ) }}
                             {% if current_user.is_admin %}
                                 {{ render_nav_item('auth.browse_users','User Management' ) }}
-                                {{ render_nav_item('transactions_pages.transactions_browse','View Bank Statement' ) }}
-                                {{ render_nav_item('transactions_pages.transactions_upload','Upload Transactions History' ) }}
                             {% endif %}
 
                         {% else %}
@@ -84,7 +82,6 @@
     {{ bootstrap.load_js() }}
 {% endblock %}
 <footer class="text-center mt-5">
-    Environment: {{ deployment_environment }} - Copyright: {{ year }} {{ format_price(100) }}
+    Environment: {{ deployment_environment }} - Copyright:{{ year }} {{ format_price(100) }}
 </footer>
 </body>
-</html>
