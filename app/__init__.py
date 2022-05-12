@@ -7,6 +7,7 @@ import flask_login
 from flask import Flask
 from flask_bootstrap import Bootstrap5
 from flask_wtf.csrf import CSRFProtect
+from flask_cors import CORS
 
 from app.auth import auth
 from app.auth import auth
@@ -17,10 +18,9 @@ from app.db.models import User
 from app.error_handlers import error_handlers
 from app.logging_config import log_con, LOGGING_CONFIG
 from app.simple_pages import simple_pages
-from app.songs import songs
-from app.map import map
 from app.db import database
-from flask_cors import CORS
+from app.transaction import transaction
+
 login_manager = flask_login.LoginManager()
 
 
@@ -49,8 +49,7 @@ def create_app():
     # these load functionality without a web interface
     app.register_blueprint(log_con)
     app.register_blueprint(error_handlers)
-    app.register_blueprint(songs)
-    app.register_blueprint(map)
+    app.register_blueprint(transaction)
     app.context_processor(utility_text_processors)
     # add command function to cli commands
     app.cli.add_command(create_database)
