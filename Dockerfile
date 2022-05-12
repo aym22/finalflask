@@ -3,7 +3,7 @@ COPY requirements.txt .
 ENV FLASK_APP=app
 ENV PORT=5000
 ENV FLASK_RUN_HOST=0.0.0.0
-ENV FLASK_ENV=production
+ENV FLASK_ENV=development
 ENV DATABASE_URL=sqlite:////home/myuser/database/db.sqlite
 ENV PATH="/home/myuser/.local/bin:${PATH}"
 RUN apt-get update &&\
