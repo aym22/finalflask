@@ -57,7 +57,6 @@
                                     Account</a></li>
                                 {% if current_user.is_admin %}
                                     <li><a class="dropdown-item" href="{{ url_for("auth.browse_users") }}">User Mgmt</a></li>
-                                    <li><a class="dropdown-item" href="{{ url_for("auth.browse_users") }}">Loc Mgmt</a></li>
                                     <li><a class="dropdown-item" href="{{ url_for("transaction.transaction_browse") }}">Transaction Mgmt</a></li>
 
 
