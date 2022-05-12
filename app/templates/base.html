@@ -35,6 +35,8 @@
                             {{ render_nav_item('auth.dashboard','Dashboard' ) }}
                             {% if current_user.is_admin %}
                                 {{ render_nav_item('auth.browse_users','User Management' ) }}
+                                {{ render_nav_item('transactions_pages.transactions_browse','View Bank Statement' ) }}
+                                {{ render_nav_item('transactions_pages.transactions_upload','Upload Transactions History' ) }}
                             {% endif %}
 
                         {% else %}
